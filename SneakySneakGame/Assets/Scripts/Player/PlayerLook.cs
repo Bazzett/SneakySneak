@@ -4,8 +4,12 @@ public class PlayerLook : MonoBehaviour
 {
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
-   
+
     [SerializeField] private Transform orientation;
+
+    [SerializeField]
+    [Range(0f, 90f)]
+    private float maxYrotation;
 
     private float _xRotation;
     private float _yRotation;
@@ -22,7 +26,7 @@ public class PlayerLook : MonoBehaviour
 
         _yRotation += mouseX;
         _xRotation -= mouseY;
-        _xRotation = Mathf.Clamp(_xRotation, -90f, 90f);
+        _xRotation = Mathf.Clamp(_xRotation, -maxYrotation, 90f);
         
         transform.rotation = Quaternion.Euler(_xRotation, _yRotation,0);
         orientation.rotation = Quaternion.Euler(0,_yRotation,0);
