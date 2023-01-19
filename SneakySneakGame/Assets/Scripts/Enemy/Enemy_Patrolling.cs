@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-public class Enemy_Pattroling : MonoBehaviour
+public class Enemy_Patrolling : MonoBehaviour
 {
     private NavMeshAgent _agent;
     public Transform[] waypoints;
@@ -20,15 +20,7 @@ public class Enemy_Pattroling : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, _target) < 1)
-        {
-            IterateWaypointIndex();
-            UpdateDestination();
-        }
-        else if (_FOV.canSeeTarget)
-        {
-            UpdateDestination();
-        }
+        FindPath();
     }
 
     void UpdateDestination()
@@ -43,6 +35,29 @@ public class Enemy_Pattroling : MonoBehaviour
         if (_waypointsIndex == waypoints.Length)
         {
             _waypointsIndex = 0;
+        }
+    }
+
+    void FindPath()
+    {
+        if (_FOV.canSeeTarget)
+        {
+            UpdateDestination();
+        }
+        else if (_target != waypoints[_waypointsIndex].position)
+        {
+            UpdateDestination();
+        }
+        
+        if (_target != _FOV.target.position && Vector3.Distance(transform.position, _target) < 1)
+        {
+            IterateWaypointIndex();
+        }
+
+        //Stop enemy when found player and is close
+        if (Vector3.Distance(transform.position, _FOV.target.position) < 1 && _agent.destination != transform.position)
+        {
+            _agent.SetDestination(transform.position);
         }
     }
 }
