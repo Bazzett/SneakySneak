@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 2687163035415843459}
   - component: {fileID: 8237704664093400177}
   - component: {fileID: 148001066324051120}
+  - component: {fileID: -116145540376075484}
   m_Layer: 3
   m_Name: Player
   m_TagString: Untagged
@@ -234,3 +235,21 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &-116145540376075484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7076303475579597354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7cc1fe704720f42a4635ede88cac73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 330585546}
+  Pickup:
+    serializedVersion: 2
+    m_Bits: 128
+  throwAble: {fileID: 4517025774270676939, guid: bf47ed074ed8d934ea24f206ed825ca3,
+    type: 3}
