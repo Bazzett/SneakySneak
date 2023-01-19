@@ -59,5 +59,10 @@ public class Enemy_Patrolling : MonoBehaviour
         {
             _agent.SetDestination(transform.position);
         }
+        else if (!_agent.hasPath)
+        {
+            print("No path now path");
+            UpdateDestination();
+        }
     }
 }
