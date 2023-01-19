@@ -17,6 +17,7 @@ public class Enemy_FieldOfView : MonoBehaviour
     private void Start()
     {
         playerReference = GameObject.FindGameObjectWithTag("Player");
+        target = playerReference.transform;
         StartCoroutine(FOVRoutine());
     }
 
