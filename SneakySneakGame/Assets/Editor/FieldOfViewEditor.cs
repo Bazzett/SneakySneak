@@ -1,15 +1,16 @@
 
 
+using Enemy;
 using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(Enemy_FieldOfView))]
+[CustomEditor(typeof(EnemyFieldOfView))]
 public class FieldOfViewEditor : Editor
 {
     private void OnSceneGUI()
     {
 
-        Enemy_FieldOfView fov = (Enemy_FieldOfView)target;
+        EnemyFieldOfView fov = (EnemyFieldOfView)target;
         Vector3 fovPos = fov.transform.position;
         
         Handles.color = Color.white;
