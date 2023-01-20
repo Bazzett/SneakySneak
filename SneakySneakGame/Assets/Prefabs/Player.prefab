@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 200
-  playerBody: {fileID: 330585546}
-  mainCam: {fileID: 7791845924994356783}
+  playerBody: {fileID: 4557814852722495710}
+  mainCam: {fileID: 330585543}
 --- !u!114 &297552414
 MonoBehaviour:
   m_ObjectHideFlags: 0
