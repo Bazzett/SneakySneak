@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 97145962}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6123415441086268038}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Orientation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,11 +303,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee3149e4f14d414a88c4a267344a810, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentHitObjects: []
   defaultNoiseRadius: 3
   noiseRadius: 10
   detectionFilter:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
+  playerBody: {fileID: 4557814852722495710}
 --- !u!114 &2512260760127737853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7462030926989496065}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -58,14 +58,19 @@ namespace Enemy
             //Stop enemy when found player and is close
             if (Vector3.Distance(transform.position, _FOV.target.position) < 1.5f && _agent.destination != transform.position)
             {
-                print("stopped");
+                Debug.Log("Stopped");
                 _agent.SetDestination(transform.position);
             }
             else if (!_agent.hasPath)
             {
-                print("No path now path");
+                Debug.Log("No Path, Start New Path");
                 UpdateDestination();
             }
+        }
+
+        public void SetPath(Vector3 posistion)
+        {
+            _agent.SetDestination(posistion);
         }
     }
 }

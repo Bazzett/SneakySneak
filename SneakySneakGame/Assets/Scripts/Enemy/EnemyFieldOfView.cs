@@ -15,6 +15,7 @@ namespace Enemy
         public LayerMask targetMask;
         public LayerMask obstructionMask;
         public bool canSeeTarget;
+        public bool alerted;
         public bool peripheralCanSeeTarget;
         public Transform target;
 

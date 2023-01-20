@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 5582404742971725158}
   - component: {fileID: 5582404742971725159}
   - component: {fileID: 5582404742971725153}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,10 +253,11 @@ MonoBehaviour:
   playerReference: {fileID: 0}
   targetMask:
     serializedVersion: 2
-    m_Bits: 520
+    m_Bits: 8
   obstructionMask:
     serializedVersion: 2
     m_Bits: 256
   canSeeTarget: 0
+  alerted: 0
   peripheralCanSeeTarget: 0
   target: {fileID: 0}
