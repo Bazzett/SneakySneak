@@ -4,7 +4,7 @@ using UnityEngine;
 public class NoiseManagerEditor : MonoBehaviour
 {
     // Start is called before the first frame update
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         NoiseManager noise = GetComponent<NoiseManager>();
         Vector3 noisePos = noise.transform.position;

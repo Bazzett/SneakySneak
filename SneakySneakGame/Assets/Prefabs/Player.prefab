@@ -251,10 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201fbfcdace00aa49b2b0d0d642018d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 200
+  walkSpeed: 280
   mainCam: {fileID: 330585543}
   gravity: 35
-  jumpHeight: 4
+  jumpHeight: 2
   groundDistance: 0.25
   groundCheck: {fileID: 7462030926989496065}
   groundLayer:

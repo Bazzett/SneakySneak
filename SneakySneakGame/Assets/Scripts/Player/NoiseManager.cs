@@ -11,13 +11,11 @@ using UnityEngine;
         [SerializeField] private LayerMask detectionFilter;
         [SerializeField] private Transform playerBody;
         
-        // Start is called before the first frame update
         void Start()
         {
             noiseRadius = defaultNoiseRadius;
         }
-
-        // Update is called once per frame
+        
         void Update()
         {
             NoiseForwarding();
