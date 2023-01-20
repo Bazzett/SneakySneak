@@ -20,14 +20,14 @@ public class FieldOfViewEditor : Editor
         Vector3 viewAngle01 = DirectionFromAngle(fovEulerY, -fov.angle * 0.5f);
         Vector3 viewAngle02 = DirectionFromAngle(fovEulerY, fov.angle * 0.5f);
         
-        Handles.color = Color.yellow;
+        Handles.color = Color.red;
         Handles.DrawLine(fovPos,fovPos + viewAngle01 * fov.radius);
         Handles.DrawLine(fovPos,fovPos + viewAngle02 * fov.radius);
         
         Vector3 viewAngle03 = DirectionFromAngle(fovEulerY, -fov.peripheralAngle * 0.5f);
         Vector3 viewAngle04 = DirectionFromAngle(fovEulerY, fov.peripheralAngle * 0.5f);
         
-        Handles.color = Color.green;
+        Handles.color = Color.yellow;
         Handles.DrawLine(fovPos,fovPos + viewAngle03 * fov.radius);
         Handles.DrawLine(fovPos,fovPos + viewAngle04 * fov.radius);
 

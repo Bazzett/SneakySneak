@@ -71,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
         {
             var jumpVel = Mathf.Sqrt(jumpHeight * -2f * -gravity);
             _rb.velocity = new Vector3(0, jumpVel, 0);
+            NoiseManager noise = GetComponent<NoiseManager>();
+            noise.noiseRadius = 10f;
         }
     }
 }
