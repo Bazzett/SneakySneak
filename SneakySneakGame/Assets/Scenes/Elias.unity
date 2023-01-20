@@ -123,12 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &97145960 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 330585543, guid: eac2c567f4b585840adc91d17bfb108c,
-    type: 3}
-  m_PrefabInstance: {fileID: 340622504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &178804215
 GameObject:
   m_ObjectHideFlags: 0
@@ -330,39 +324,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: gravity
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: mainCam
-      value: 
-      objectReference: {fileID: 97145960}
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: jumpHeight
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: playerBody
-      value: 
-      objectReference: {fileID: 1525681719}
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: groundCheck
-      value: 
-      objectReference: {fileID: 1929801387}
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: groundDistance
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 64
-      objectReference: {fileID: 0}
-    - target: {fileID: 148001066324051120, guid: eac2c567f4b585840adc91d17bfb108c,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6428162301718153174, guid: eac2c567f4b585840adc91d17bfb108c,
         type: 3}
       propertyPath: m_RootOrder
@@ -977,12 +938,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180309958}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1525681719 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4557814852722495710, guid: eac2c567f4b585840adc91d17bfb108c,
-    type: 3}
-  m_PrefabInstance: {fileID: 340622504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1810466560
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,12 +1035,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810466560}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1929801387 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7462030926989496065, guid: eac2c567f4b585840adc91d17bfb108c,
-    type: 3}
-  m_PrefabInstance: {fileID: 340622504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1973927283
 GameObject:
   m_ObjectHideFlags: 0

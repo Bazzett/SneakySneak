@@ -55,8 +55,9 @@ public class Enemy_Patrolling : MonoBehaviour
         }
 
         //Stop enemy when found player and is close
-        if (Vector3.Distance(transform.position, _FOV.target.position) < 1 && _agent.destination != transform.position)
+        if (Vector3.Distance(transform.position, _FOV.target.position) < 2 && _agent.destination != transform.position)
         {
+            print("stopped");
             _agent.SetDestination(transform.position);
         }
         else if (!_agent.hasPath)

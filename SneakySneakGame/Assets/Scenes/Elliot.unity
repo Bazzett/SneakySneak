@@ -138,7 +138,7 @@ PrefabInstance:
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
@@ -403,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
@@ -593,7 +593,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922649416
 GameObject:
@@ -1300,7 +1300,7 @@ PrefabInstance:
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
@@ -1390,7 +1390,7 @@ Transform:
   - {fileID: 2004025578}
   - {fileID: 1866673186}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3815371683347160823
 PrefabInstance:
@@ -1504,7 +1504,7 @@ PrefabInstance:
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2399411192740628492, guid: 903e2ade86c5ab54587ca5f4324377c7,
         type: 3}
@@ -1680,6 +1680,16 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1187738943}
+    - target: {fileID: 5582404742971725153, guid: 3f7a8562fe55ac2449ca50642444bb15,
+        type: 3}
+      propertyPath: peripheralAngle
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 5582404742971725153, guid: 3f7a8562fe55ac2449ca50642444bb15,
+        type: 3}
+      propertyPath: peripheralRadius
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 5582404742971725154, guid: 3f7a8562fe55ac2449ca50642444bb15,
         type: 3}
       propertyPath: m_RootOrder

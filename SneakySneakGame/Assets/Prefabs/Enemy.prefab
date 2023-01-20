@@ -249,12 +249,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 10
   angle: 110
+  peripheralAngle: 145
   playerReference: {fileID: 0}
   targetMask:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 520
   obstructionMask:
     serializedVersion: 2
     m_Bits: 256
   canSeeTarget: 0
+  peripheralCanSeeTarget: 0
   target: {fileID: 0}

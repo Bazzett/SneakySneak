@@ -3,8 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="0d58d660-dfd2-4519-a3c9-e63fd3a29868" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Editor/FieldOfViewEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Editor/FieldOfViewEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elliot.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elliot.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy_FieldOfView.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemy/Enemy_FieldOfView.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +78,8 @@
       <updated>1674137834434</updated>
       <workItem from="1674137844318" duration="2000" />
       <workItem from="1674138733361" duration="4746000" />
-      <workItem from="1674209506027" duration="6039000" />
+      <workItem from="1674209506027" duration="6297000" />
+      <workItem from="1674220164244" duration="1376000" />
     </task>
     <servers />
   </component>

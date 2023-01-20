@@ -22,12 +22,20 @@ public class FieldOfViewEditor : Editor
         Handles.color = Color.yellow;
         Handles.DrawLine(fovPos,fovPos + viewAngle01 * fov.radius);
         Handles.DrawLine(fovPos,fovPos + viewAngle02 * fov.radius);
+        
+        Vector3 viewAngle03 = DirectionFromAngle(fovEulerY, -fov.peripheralAngle * 0.5f);
+        Vector3 viewAngle04 = DirectionFromAngle(fovEulerY, fov.peripheralAngle * 0.5f);
+        
+        Handles.color = Color.green;
+        Handles.DrawLine(fovPos,fovPos + viewAngle03 * fov.radius);
+        Handles.DrawLine(fovPos,fovPos + viewAngle04 * fov.radius);
 
         if (fov.canSeeTarget)
         {
             Handles.color = Color.blue;
             Handles.DrawLine(fovPos, fov.playerReference.transform.position);
         }
+        
     }
 
     private Vector3 DirectionFromAngle(float eulerY, float angleInDegrees)
