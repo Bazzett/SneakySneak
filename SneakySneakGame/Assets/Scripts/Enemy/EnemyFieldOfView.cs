@@ -54,6 +54,7 @@ namespace Enemy
                     if (!Physics.Raycast(transform.position, directionToTarget, distanceToTarget, obstructionMask))
                     {
                         canSeeTarget = true;
+                        alerted = true;
                     }
                     else
                     {

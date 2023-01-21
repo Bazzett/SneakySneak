@@ -27,19 +27,20 @@ public class EnemyExclamation : MonoBehaviour
         if (_fov.canSeeTarget)
         {
             _alert.gameObject.SetActive(true);
+            _warning.gameObject.SetActive(false);
         }
-        else
+        else if (!_fov.alerted)
         {
             _alert.gameObject.SetActive(false);
         }
         
-        if (_fov.peripheralCanSeeTarget)
+        if ((_fov.peripheralCanSeeTarget || _fov.alerted) && !_fov.canSeeTarget)
         {
-            _alert.gameObject.SetActive(true);
+            _warning.gameObject.SetActive(true);
         }
-        else
+        else if (!_fov.alerted)
         {
-            _alert.gameObject.SetActive(false);
+            _warning.gameObject.SetActive(false);
         }
     }
 }

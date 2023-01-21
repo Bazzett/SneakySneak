@@ -13,7 +13,7 @@ namespace Enemy
         [SerializeField]
         private EnemyFieldOfView _FOV;
 
-        [HideInInspector] public bool stopped;
+        public bool stopped;
 
         void Start()
         {
@@ -63,11 +63,13 @@ namespace Enemy
             }
             else if (Vector3.Distance(transform.position, _target) < 1)
             {
-                Debug.Log("Go back to path");
+                _FOV.alerted = false;
+                Debug.Log("Go to next path");
                 UpdateDestination();
             }
             else if (!_agent.hasPath)
             {
+                _FOV.alerted = false;
                 Debug.Log("No path, start new path");
                 UpdateDestination();
             }

@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.555, z: 0.304}
+  m_LocalPosition: {x: 0, y: 0.555, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -66,7 +66,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1015
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -134,6 +134,7 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 4557814852722495710}
+  _cameraTrasnform: {fileID: 0}
   maxYrotation: 70
 --- !u!1 &723570264208663309
 GameObject:
@@ -147,7 +148,7 @@ GameObject:
   - component: {fileID: 7628135776523827759}
   - component: {fileID: 2146435356926707381}
   - component: {fileID: 4255305148654801904}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +245,7 @@ GameObject:
   - component: {fileID: 6582998326430991564}
   - component: {fileID: 439739292758575142}
   - component: {fileID: 1577415595331199540}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: shade 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +339,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6819223228009809767}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Glasses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -353,15 +354,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690811403769894376}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.45, z: 0.37}
+  m_LocalPosition: {x: 0, y: 0.45000005, z: 0.3699999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3604830343556129281}
   - {fileID: 7906436591945752753}
   - {fileID: 2499983039539512481}
-  m_Father: {fileID: 6428162301718153174}
-  m_RootOrder: 4
+  m_Father: {fileID: 4557814852722495710}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3830032413375174206
 GameObject:
@@ -432,7 +433,6 @@ Transform:
   - {fileID: 4557814852722495710}
   - {fileID: 6123415441086268038}
   - {fileID: 7462030926989496065}
-  - {fileID: 6819223228009809767}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -564,7 +564,7 @@ GameObject:
   - component: {fileID: 6775876001324324990}
   - component: {fileID: 1933078413145786212}
   - component: {fileID: 3597847551692367138}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: bow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6819223228009809767}
   m_Father: {fileID: 6428162301718153174}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

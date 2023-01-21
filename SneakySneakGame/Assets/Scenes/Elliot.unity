@@ -304,6 +304,22 @@ PrefabInstance:
       propertyPath: groundLayer.m_Bits
       value: 320
       objectReference: {fileID: 0}
+    - target: {fileID: 330585543, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330585545, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 330585545, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 1015
+      objectReference: {fileID: 0}
+    - target: {fileID: 330585546, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.754
+      objectReference: {fileID: 0}
     - target: {fileID: 1823174373370574843, guid: eac2c567f4b585840adc91d17bfb108c,
         type: 3}
       propertyPath: noiseRadius

@@ -253,7 +253,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radius: 10
   angle: 110
-  peripheralAngle: 145
+  peripheralAngle: 180
   playerReference: {fileID: 0}
   targetMask:
     serializedVersion: 2
