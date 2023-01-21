@@ -9,6 +9,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4e64905d831f4883a53259ef37fb023b814200/ef/867156ad/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyExclamation.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -72,6 +73,7 @@
       <workItem from="1674220164244" duration="1376000" />
       <workItem from="1674252461947" duration="6262000" />
       <workItem from="1674291602935" duration="4049000" />
+      <workItem from="1674300373012" duration="1018000" />
     </task>
     <servers />
   </component>

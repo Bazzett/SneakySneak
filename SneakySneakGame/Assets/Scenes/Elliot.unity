@@ -296,6 +296,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 97145962, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
+      propertyPath: orientation
+      value: 
+      objectReference: {fileID: 1241310841}
     - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
       propertyPath: groundLayer.m_Bits
       value: 320
@@ -1080,6 +1084,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1223523984}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1241310841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6428162301718153174, guid: eac2c567f4b585840adc91d17bfb108c,
+    type: 3}
+  m_PrefabInstance: {fileID: 341887486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1375941707
 GameObject:
   m_ObjectHideFlags: 0
