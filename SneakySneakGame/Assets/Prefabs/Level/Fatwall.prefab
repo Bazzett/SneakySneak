@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 193043005597995269}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fatwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 2855117898891694640}
   - component: {fileID: 2379494320277317500}
   - component: {fileID: 8441737443560243964}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
