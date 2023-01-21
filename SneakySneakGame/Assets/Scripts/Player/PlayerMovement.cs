@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,26 +9,31 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject mainCam;
     private Vector2 _moveInput;
     private Vector3 _targetVector;
-    
+
     [Header("Jumping")]
     [SerializeField] private float gravity;
     [SerializeField] private float jumpHeight;
     [SerializeField] private float groundDistance;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    private bool _isGrounded;
+    private bool _grounded;
 
-
-    private Rigidbody _rb;
+    private NoiseManager _noise;
+    private float _noisePulse;
+    [SerializeField] [Range(0f,1f)] private float _noisePulseRate;
     
+    private Rigidbody _rb;
+
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
+        _noise = GetComponent<NoiseManager>();
     }
     
     void Update()
     {
         Move(_targetVector);
+        GroundCheck();
         Jump();
     }
 
@@ -61,18 +63,32 @@ public class PlayerMovement : MonoBehaviour
     private void Gravity()
     {
         _rb.AddForce(transform.up * -gravity, ForceMode.Acceleration);
+        if (!_grounded)
+        {
+            _noisePulse += _noisePulseRate;
+        }
+        else
+        {
+            _noisePulse = 0;
+        }
     }
 
     private void Jump()
     {
-        _isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
-
-        if (Input.GetButtonDown("Jump") && _isGrounded)
+        if (Input.GetButtonDown("Jump") && _grounded)
         {
             var jumpVel = Mathf.Sqrt(jumpHeight * -2f * -gravity);
             _rb.velocity = new Vector3(0, jumpVel, 0);
-            NoiseManager noise = GetComponent<NoiseManager>();
-            noise.noiseRadius = 6.5f;
+        }
+    }
+
+    private void GroundCheck()
+    {
+        _grounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundLayer);
+
+        if (_grounded && _noisePulse > _noise.defaultNoiseRadius)
+        {
+            _noise.noiseRadius = _noisePulse;
         }
     }
 }

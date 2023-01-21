@@ -13,6 +13,8 @@ namespace Enemy
         [SerializeField]
         private EnemyFieldOfView _FOV;
 
+        [HideInInspector] public bool stopped;
+
         void Start()
         {
             _agent = GetComponent<NavMeshAgent>();
@@ -41,29 +43,32 @@ namespace Enemy
 
         void FindPath()
         {
-            if (_FOV.canSeeTarget)
-            {
-                UpdateDestination();
-            }
-            else if (_target != waypoints[_waypointsIndex].position)
-            {
-                UpdateDestination();
-            }
-        
             if (_target != _FOV.target.position && Vector3.Distance(transform.position, _target) < 1)
             {
                 IterateWaypointIndex();
             }
 
+            stopped = false;
             //Stop enemy when found player and is close
-            if (Vector3.Distance(transform.position, _FOV.target.position) < 1.5f && _agent.destination != transform.position)
+            if (Vector3.Distance(transform.position, _FOV.target.position) < 2f)
             {
                 Debug.Log("Stopped");
-                _agent.SetDestination(transform.position);
+                stopped = true;
+                _agent.ResetPath();
+            }
+            else if (_FOV.canSeeTarget)
+            {
+                Debug.Log("Chase player");
+                UpdateDestination();
+            }
+            else if (Vector3.Distance(transform.position, _target) < 1)
+            {
+                Debug.Log("Go back to path");
+                UpdateDestination();
             }
             else if (!_agent.hasPath)
             {
-                Debug.Log("No Path, Start New Path");
+                Debug.Log("No path, start new path");
                 UpdateDestination();
             }
         }
