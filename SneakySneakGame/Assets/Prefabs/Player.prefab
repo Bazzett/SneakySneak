@@ -465,10 +465,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7cc1fe704720f42a4635ede88cac73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 330585546}
-  Pickup:
+  pickup:
     serializedVersion: 2
     m_Bits: 128
+  rightHand: {fileID: 0}
 --- !u!114 &297552413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -499,6 +499,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 320
   lamp: {fileID: 4258743885747722982}
+  minOil: 0
+  maxOil: 10
   _noisePulseRate: 0.16
 --- !u!114 &297552414
 MonoBehaviour:
