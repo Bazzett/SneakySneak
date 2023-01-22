@@ -1223,6 +1223,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -116145540376075484, guid: eac2c567f4b585840adc91d17bfb108c,
+        type: 3}
+      propertyPath: rightHand
+      value: 
+      objectReference: {fileID: 1037912189}
     - target: {fileID: 297552413, guid: eac2c567f4b585840adc91d17bfb108c, type: 3}
       propertyPath: lamp
       value: 
@@ -1241,6 +1246,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123415441086268038, guid: eac2c567f4b585840adc91d17bfb108c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.414
       objectReference: {fileID: 0}
     - target: {fileID: 6428162301718153174, guid: eac2c567f4b585840adc91d17bfb108c,
         type: 3}
@@ -3869,6 +3879,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b627e8df7f9af3246a9385d6a263bf55, type: 3}
+--- !u!4 &1037912189 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6123415441086268038, guid: eac2c567f4b585840adc91d17bfb108c,
+    type: 3}
+  m_PrefabInstance: {fileID: 341887486}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1061651183
 PrefabInstance:
   m_ObjectHideFlags: 0
