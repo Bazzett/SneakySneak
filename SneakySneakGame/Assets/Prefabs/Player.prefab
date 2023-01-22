@@ -362,7 +362,7 @@ Transform:
   - {fileID: 7906436591945752753}
   - {fileID: 2499983039539512481}
   m_Father: {fileID: 4557814852722495710}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3830032413375174206
 GameObject:
@@ -374,7 +374,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6123415441086268038}
   m_Layer: 0
-  m_Name: Orientation
+  m_Name: RightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,13 +387,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3830032413375174206}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.494, y: 0.309, z: 0.406}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6428162301718153174}
-  m_RootOrder: 2
+  m_Father: {fileID: 4557814852722495710}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7076303475579597354
 GameObject:
@@ -431,7 +431,6 @@ Transform:
   m_Children:
   - {fileID: 330585546}
   - {fileID: 4557814852722495710}
-  - {fileID: 6123415441086268038}
   - {fileID: 7462030926989496065}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -464,10 +463,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7cc1fe704720f42a4635ede88cac73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerCamera: {fileID: 330585546}
-  Pickup:
+  pickup:
     serializedVersion: 2
     m_Bits: 128
+  rightHand: {fileID: 6123415441086268038}
 --- !u!114 &297552413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -497,7 +496,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 320
-  _noisePulseRate: 0.16
+  _noisePulseRate: 0.14
 --- !u!114 &297552414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,7 +542,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHitObjects: []
   defaultNoiseRadius: 3
-  noiseRadius: 10
+  noiseRadius: 5
   detectionFilter:
     serializedVersion: 2
     m_Bits: 512
@@ -686,7 +685,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6428162301718153174}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7791845924994356783
 GameObject:
@@ -719,6 +718,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 6123415441086268038}
   - {fileID: 6819223228009809767}
   m_Father: {fileID: 6428162301718153174}
   m_RootOrder: 1
@@ -780,7 +780,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7791845924994356783}
-  m_Material: {fileID: 13400000, guid: 1d9c8640a43c8814aab7b09565459daa, type: 2}
+  m_Material: {fileID: 13400000, guid: 09f39417ebe538a4eaffa7dd712818f4, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
