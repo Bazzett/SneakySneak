@@ -38,7 +38,6 @@ public class PlayerMovement : MonoBehaviour
 	private float currentOil = 10f;
 
 	private bool isLampOn = false;
-	private bool oilSupplyEmpty = true;
 
 	private NoiseManager _noise;
 	private float _noisePulse;
@@ -63,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
-		
+
 		Move(_targetVector);
 		GroundCheck();
 		Run();
