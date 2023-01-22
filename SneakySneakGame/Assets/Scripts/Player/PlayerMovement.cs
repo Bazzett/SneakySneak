@@ -30,7 +30,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     private bool _grounded;
 
-    private NoiseManager _noise;
+    [Header("Equipment")]
+    [SerializeField] private GameObject lamp;
+    private bool isLampOn = false;
+
+	private NoiseManager _noise;
     private float _noisePulse;
     [SerializeField] [Range(0f,1f)] private float _noisePulseRate;
     
@@ -47,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         currentSpeed = walkSpeed;
         stamina = maxStamina;
+        lamp.gameObject.SetActive(false);
     }
     
     void Update()
@@ -54,11 +59,13 @@ public class PlayerMovement : MonoBehaviour
         Move(_targetVector);
         GroundCheck();
         Run();
-    }
+		Lamp();
+	}
 
     private void FixedUpdate()
     {
         Gravity();
+       
     }
 
     private void OnMove(InputValue value)
@@ -143,4 +150,21 @@ public class PlayerMovement : MonoBehaviour
             _noise.noiseRadius = _noisePulse;
         }
     }
+
+    private void Lamp()
+    {
+		if (Input.GetKeyDown(KeyCode.F))
+		{
+			if (isLampOn == false)
+			{
+				lamp.gameObject.SetActive(true);
+				isLampOn = true;
+			}
+			else
+			{
+				lamp.gameObject.SetActive(false);
+				isLampOn = false;
+			}
+		}
+	}
 }
