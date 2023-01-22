@@ -33,18 +33,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Pickup",
+                    "name": "Lamp",
                     "type": "Button",
-                    "id": "682cdc20-1ee4-41a5-a5f1-1165385904c4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Drop",
-                    "type": "Button",
-                    "id": "7514336a-c296-453f-ad6d-41115be54158",
+                    "id": "33620318-fa0c-4d99-8f30-9c0a350769a0",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -252,23 +243,12 @@
                 },
                 {
                     "name": "",
-                    "id": "dee225ae-8baa-46eb-b78c-9a5e499a7bd8",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
+                    "id": "d44f0fd1-0ac1-4fcf-b549-9e40a12e7bc2",
+                    "path": "<Keyboard>/f",
+                    "interactions": "Press",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Pickup",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3bcb8fe8-714e-49f1-b3cd-a6c118b31d0c",
-                    "path": "<Keyboard>/g",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Drop",
+                    "groups": "",
+                    "action": "Lamp",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
