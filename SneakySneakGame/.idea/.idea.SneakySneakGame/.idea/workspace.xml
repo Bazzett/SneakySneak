@@ -3,15 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="0d58d660-dfd2-4519-a3c9-e63fd3a29868" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input actions/SneakySneak.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input actions/SneakySneak.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/PickupHighlight.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/PickupHighlight.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/GlassBottle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/GlassBottle.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IPickupable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/IPickupable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUp.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUp.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayCastPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RayCastPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUp.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUp/PickUp.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUp/RayCastPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUp/RayCastPlayer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,7 +85,7 @@
       <workItem from="1674291602935" duration="4049000" />
       <workItem from="1674300373012" duration="1018000" />
       <workItem from="1674303896101" duration="4405000" />
-      <workItem from="1674388680518" duration="3762000" />
+      <workItem from="1674388680518" duration="11548000" />
     </task>
     <servers />
   </component>

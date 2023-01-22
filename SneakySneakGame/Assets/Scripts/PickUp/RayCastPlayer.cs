@@ -1,47 +1,62 @@
+using System;
 using UnityEngine;
 
 public class RayCastPlayer : MonoBehaviour
 {
-	[SerializeField] private LayerMask pickup;
-    [SerializeField] private Material highlightMaterial;
-    [SerializeField] private Material defaultMaterial;
-
+    [SerializeField] private LayerMask pickup;
+    [SerializeField] private Transform rightHand;
     private Transform _selection;
-    
-	private float _pickupDistance = 2f;
+    private bool equipped;
 
-	
+    private float _pickupDistance = 2f;
 
-	private void Update()
-	{
-		
-		if (_selection != null)
-		{
-			var selectionRenderer = _selection.GetComponent<Renderer>();
-			selectionRenderer.material = defaultMaterial;
-			_selection = null;
-		}
-		
-		RaycastHit hit; ;
-		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+    private void Update()
+    {
+        
+        Drop();
+        HighlightTarget();
+    }
+
+    private void HighlightTarget()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
 
-		if (Physics.Raycast(ray, out hit, _pickupDistance, pickup))
-		{
-			var selection = hit.transform;
-			var selectionRenderer = selection.GetComponent<Renderer>();
-			if (selectionRenderer != null)
-			{
-				selectionRenderer.material = highlightMaterial;
-			}
+        if (Physics.Raycast(ray, out hit, _pickupDistance, pickup))
+        {
+            
+            var selection = hit.transform;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                selection.transform.SetParent(rightHand);
+                selection.transform.localPosition = Vector3.zero;
+                selection.transform.localRotation = Quaternion.Euler(Vector3.zero);
 
-			_selection = selection;
+                var itemInHandrb = rightHand.GetChild(0).GetComponent<Rigidbody>();
 
-			//Debug.Log("You can pick this up");
-		}
+                selection.GetComponent<BoxCollider>().enabled = false;
+                itemInHandrb.constraints = RigidbodyConstraints.FreezeAll;
+                itemInHandrb.useGravity = false;
+                equipped = true;
+            }
 
-		
-	}
-	
-	
+            _selection = selection;
+        }
+    }
+
+    private void Drop()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && equipped)
+        {
+            var rightChild = rightHand.GetChild(0);
+            var itemInHandrb = rightChild.GetComponent<Rigidbody>();
+
+            rightChild.GetComponent<BoxCollider>().enabled = true;
+            rightChild.SetParent(null);
+            itemInHandrb.constraints = RigidbodyConstraints.None;
+            itemInHandrb.useGravity = true;
+            equipped = false;
+        }
+    }
 }
