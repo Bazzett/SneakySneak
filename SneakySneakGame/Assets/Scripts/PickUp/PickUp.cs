@@ -6,6 +6,6 @@ public class PickUp : MonoBehaviour, IPickupable
 {
 	public void OnCollision(Collision other)
 	{
-		throw new System.NotImplementedException();
+		
 	}
 }
