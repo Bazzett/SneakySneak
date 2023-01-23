@@ -24,7 +24,7 @@ public class EnemyExclamation : MonoBehaviour
 
     private void ExclamationManager()
     {
-        if (_fov.canSeeTarget)
+        if (_fov.canSeeTarget || _fov.alerted)
         {
             _alert.gameObject.SetActive(true);
             _warning.gameObject.SetActive(false);
@@ -34,7 +34,7 @@ public class EnemyExclamation : MonoBehaviour
             _alert.gameObject.SetActive(false);
         }
         
-        if ((_fov.peripheralCanSeeTarget || _fov.alerted) && !_fov.canSeeTarget)
+        if ((_fov.peripheralCanSeeTarget) && !_fov.canSeeTarget)
         {
             _warning.gameObject.SetActive(true);
         }
