@@ -16,6 +16,15 @@ public class PlayerMovement : MonoBehaviour
 	private Vector2 _moveInput;
 	private Vector3 _targetVector;
 
+	[Header("Crouching")]
+	[SerializeField] private float crouchSpeed;
+	[SerializeField] private float crouchYScale;
+	[SerializeField] private Transform playerBody;
+	[SerializeField] private Transform aboveCheck;
+	private bool _blocked;
+	private float _startYScale;
+	private bool _crouching;
+	
 	[Header("Stamina")]
 	[SerializeField] private float stamina;
 	[SerializeField] private float maxStamina;
@@ -58,6 +67,8 @@ public class PlayerMovement : MonoBehaviour
 		stamina = maxStamina;
 		lamp.gameObject.SetActive(false);
 
+		_startYScale = transform.localScale.y;
+
 	}
 
 	void Update()
@@ -66,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 		Move(_targetVector);
 		GroundCheck();
 		Run();
-		Lamp();
+		Crouch();
 		OilBurn();
 	}
 
@@ -104,12 +115,12 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Run()
 	{
-		if (Input.GetKeyDown(KeyCode.LeftShift) && stamina > 5)
+		if (Input.GetKeyDown(KeyCode.LeftShift) && stamina > 5 && _crouching == false)
 		{
 			isSprinting = true;
 			currentSpeed = sprintSpeed;
 		}
-		else if (Input.GetKeyUp(KeyCode.LeftShift) || stamina <= 0)
+		else if (Input.GetKeyUp(KeyCode.LeftShift) || stamina <= 0 && isSprinting)
 		{
 			isSprinting = false;
 			currentSpeed = walkSpeed;
@@ -159,20 +170,17 @@ public class PlayerMovement : MonoBehaviour
 		}
 	}
 
-	private void Lamp()
+	private void OnLamp()
 	{
-		if (Input.GetKeyDown(KeyCode.F))
+		if (isLampOn == false)
 		{
-			if (isLampOn == false)
-			{
-				lamp.gameObject.SetActive(true);
-				isLampOn = true;
-			}
-			else
-			{
-				lamp.gameObject.SetActive(false);
-				isLampOn = false;
-			}
+			lamp.gameObject.SetActive(true);
+			isLampOn = true;
+		}
+		else
+		{
+			lamp.gameObject.SetActive(false);
+			isLampOn = false;
 		}
 	}
 
@@ -185,6 +193,25 @@ public class PlayerMovement : MonoBehaviour
 		if (currentOil < minOil)
 		{
 			lamp.gameObject.SetActive(false);
+		}
+	}
+
+	private void Crouch()
+	{
+		
+		_blocked = Physics.Raycast(groundCheck.position, groundCheck.transform.up, 2, groundLayer);
+		if (Input.GetKey(KeyCode.LeftControl))
+		{
+			playerBody.localScale = new Vector3(playerBody.localScale.x, crouchYScale, playerBody.localScale.z);
+			//_rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
+			currentSpeed = crouchSpeed;
+			_crouching = true;
+		}
+		else if (_blocked == false)
+		{
+			playerBody.localScale = new Vector3(playerBody.localScale.x, _startYScale, playerBody.localScale.z);
+			currentSpeed = walkSpeed;
+			_crouching = false;
 		}
 	}
 }

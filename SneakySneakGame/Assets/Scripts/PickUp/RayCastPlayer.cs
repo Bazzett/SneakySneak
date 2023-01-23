@@ -12,9 +12,9 @@ public class RayCastPlayer : MonoBehaviour
 
     private void Update()
     {
-        
         Drop();
         HighlightTarget();
+        if (equipped) _selection.transform.position = rightHand.transform.position;
     }
 
     private void HighlightTarget()
@@ -29,11 +29,11 @@ public class RayCastPlayer : MonoBehaviour
             var selection = hit.transform;
             if (Input.GetKeyDown(KeyCode.E))
             {
-                selection.transform.SetParent(rightHand);
+                //selection.transform.SetParent(rightHand);
                 selection.transform.localPosition = Vector3.zero;
                 selection.transform.localRotation = Quaternion.Euler(Vector3.zero);
 
-                var itemInHandrb = rightHand.GetChild(0).GetComponent<Rigidbody>();
+                var itemInHandrb = selection.transform.GetComponent<Rigidbody>();
 
                 selection.GetComponent<BoxCollider>().enabled = false;
                 itemInHandrb.constraints = RigidbodyConstraints.FreezeAll;
@@ -49,11 +49,11 @@ public class RayCastPlayer : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && equipped)
         {
-            var rightChild = rightHand.GetChild(0);
+            var rightChild = _selection.transform;
             var itemInHandrb = rightChild.GetComponent<Rigidbody>();
 
             rightChild.GetComponent<BoxCollider>().enabled = true;
-            rightChild.SetParent(null);
+            //rightChild.SetParent(null);
             itemInHandrb.constraints = RigidbodyConstraints.None;
             itemInHandrb.useGravity = true;
             equipped = false;
