@@ -203,14 +203,12 @@ public class PlayerMovement : MonoBehaviour
 		if (Input.GetKey(KeyCode.LeftControl))
 		{
 			playerBody.localScale = new Vector3(playerBody.localScale.x, crouchYScale, playerBody.localScale.z);
-			//_rb.AddForce(Vector3.down * 5f, ForceMode.Impulse);
 			currentSpeed = crouchSpeed;
 			_crouching = true;
 		}
 		else if (_blocked == false)
 		{
 			playerBody.localScale = new Vector3(playerBody.localScale.x, _startYScale, playerBody.localScale.z);
-			currentSpeed = walkSpeed;
 			_crouching = false;
 		}
 	}
