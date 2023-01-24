@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class PlayerLook : MonoBehaviour
 {
+    [SerializeField] [Range(0,1)] private float sens;
     [SerializeField] private float sensX;
     [SerializeField] private float sensY;
 
     [SerializeField] private Transform orientation;
-    [SerializeField] private Transform _cameraTrasnform;
+    //[SerializeField] private Transform _cameraTrasnform;
 
     [SerializeField]
     [Range(0f, 90f)]
@@ -28,8 +29,8 @@ public class PlayerLook : MonoBehaviour
 
     private void RotateCamera()
     {
-        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
-        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+        float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * (sensX * sens);
+        float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * (sensY * sens);
 
         _yRotation += mouseX;
         _xRotation -= mouseY;
