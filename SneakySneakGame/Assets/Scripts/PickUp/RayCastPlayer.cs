@@ -31,7 +31,7 @@ public class RayCastPlayer : MonoBehaviour
     private void HighlightTarget()
     {
         RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
 
         if (Physics.Raycast(ray, out hit, _pickupDistance, pickup))
@@ -62,7 +62,6 @@ public class RayCastPlayer : MonoBehaviour
         var itemInHandRb = rightChild.GetComponent<Rigidbody>();
 
         rightChild.GetComponent<BoxCollider>().enabled = true;
-        //rightChild.SetParent(null);
         itemInHandRb.constraints = RigidbodyConstraints.None;
         itemInHandRb.useGravity = true;
         equipped = false;
