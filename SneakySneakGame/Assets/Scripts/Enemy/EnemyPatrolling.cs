@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -14,6 +16,8 @@ namespace Enemy
         private EnemyFieldOfView _FOV;
 
         public bool stopped;
+
+        private bool _coroutineRunning = false;
 
         void Start()
         {
@@ -34,6 +38,7 @@ namespace Enemy
 
         void IterateWaypointIndex()
         {
+            print("Iterate");
             _waypointsIndex++;
             if (_waypointsIndex == waypoints.Length)
             {
@@ -43,9 +48,23 @@ namespace Enemy
 
         void FindPath()
         {
-            if (_target != _FOV.target.position && Vector3.Distance(transform.position, _target) < 1)
+            //Check if target is a waypoint and not sth else
+            if (_target != _FOV.target.position && Vector3.Distance(transform.position, _target) < 1 && !_coroutineRunning)
             {
-                IterateWaypointIndex();
+                var waypointScript = waypoints[_waypointsIndex].GetComponent<WaypointBehaviour>();
+                if (waypointScript.StopAndWait)
+                {
+                    Debug.Log("Start Coroutine");
+                    StartCoroutine(WaitAndPath());
+                }
+                else if (!waypointScript.StopAndWait)
+                {
+                    IterateWaypointIndex();
+                }
+            }
+            else if (Vector3.Distance(transform.position, _target) > 1) //Check if outside of start coroutine range
+            {
+                _coroutineRunning = false;
             }
 
             stopped = false;
@@ -78,6 +97,14 @@ namespace Enemy
         public void SetPath(Vector3 posistion)
         {
             _agent.SetDestination(posistion);
+        }
+
+        private IEnumerator WaitAndPath()
+        {
+            _coroutineRunning = true;
+            var waypointScript = waypoints[_waypointsIndex].GetComponent<WaypointBehaviour>();
+            yield return new WaitForSeconds(waypointScript.Seconds);
+            IterateWaypointIndex();
         }
     }
 }

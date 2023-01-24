@@ -331,6 +331,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1863133364439513015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8494156339125924519}
+  m_Layer: 0
+  m_Name: AboveCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8494156339125924519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863133364439513015}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4557814852722495710}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3690811403769894376
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,9 +516,8 @@ MonoBehaviour:
   sprintNoise: 5
   crouchSpeed: 0
   crouchYScale: 0
-  playerBody: {fileID: 0}
-  aboveCheck: {fileID: 0}
-  _blocked: 0
+  playerBody: {fileID: 4557814852722495710}
+  aboveCheck: {fileID: 8494156339125924519}
   stamina: 0
   maxStamina: 20
   staminaDecreaseRate: 5
@@ -500,7 +530,6 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 320
-  _grounded: 0
   lamp: {fileID: 4258743885747722982}
   minOil: 0
   maxOil: 10
@@ -730,6 +759,7 @@ Transform:
   - {fileID: 330585546}
   - {fileID: 6123415441086268038}
   - {fileID: 7462030926989496065}
+  - {fileID: 8494156339125924519}
   m_Father: {fileID: 6428162301718153174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
