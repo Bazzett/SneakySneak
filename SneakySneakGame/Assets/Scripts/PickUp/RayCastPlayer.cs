@@ -26,9 +26,10 @@ public class RayCastPlayer : MonoBehaviour
         if (Physics.Raycast(ray, out hit, _pickupDistance, pickup))
         {
             
-            var selection = hit.transform;
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
+                var selection = hit.transform;
                 //selection.transform.SetParent(rightHand);
                 selection.transform.localPosition = Vector3.zero;
                 selection.transform.localRotation = Quaternion.Euler(Vector3.zero);
@@ -39,9 +40,8 @@ public class RayCastPlayer : MonoBehaviour
                 itemInHandrb.constraints = RigidbodyConstraints.FreezeAll;
                 itemInHandrb.useGravity = false;
                 equipped = true;
+                _selection = selection;
             }
-
-            _selection = selection;
         }
     }
 
