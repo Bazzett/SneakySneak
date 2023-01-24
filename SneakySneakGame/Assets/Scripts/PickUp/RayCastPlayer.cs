@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class RayCastPlayer : MonoBehaviour
 {
+    [SerializeField] private Camera cam;
     [SerializeField] private LayerMask pickup;
     [SerializeField] private Transform rightHand;
     private Transform _selection;
@@ -12,7 +13,17 @@ public class RayCastPlayer : MonoBehaviour
 
     private void Update()
     {
-        Drop();
+        if (Input.GetKeyDown(KeyCode.E) && equipped)
+        {
+            Drop();
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Drop();
+            ThrowItem();
+        }
+
         HighlightTarget();
         if (equipped) _selection.transform.position = rightHand.transform.position;
     }
@@ -47,16 +58,22 @@ public class RayCastPlayer : MonoBehaviour
 
     private void Drop()
     {
-        if (Input.GetKeyDown(KeyCode.E) && equipped)
-        {
-            var rightChild = _selection.transform;
-            var itemInHandrb = rightChild.GetComponent<Rigidbody>();
+        var rightChild = _selection.transform;
+        var itemInHandRb = rightChild.GetComponent<Rigidbody>();
 
-            rightChild.GetComponent<BoxCollider>().enabled = true;
-            //rightChild.SetParent(null);
-            itemInHandrb.constraints = RigidbodyConstraints.None;
-            itemInHandrb.useGravity = true;
-            equipped = false;
-        }
+        rightChild.GetComponent<BoxCollider>().enabled = true;
+        //rightChild.SetParent(null);
+        itemInHandRb.constraints = RigidbodyConstraints.None;
+        itemInHandRb.useGravity = true;
+        equipped = false;
+    }
+
+    private void ThrowItem()
+    {
+        var rightChild = _selection.transform;
+        var itemInHandRb = rightChild.GetComponent<Rigidbody>();
+        
+        Vector3 direction = cam.ScreenPointToRay(Input.mousePosition).direction;
+        itemInHandRb.AddForce(direction * 800);
     }
 }

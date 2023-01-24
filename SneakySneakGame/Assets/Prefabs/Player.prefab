@@ -492,6 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7cc1fe704720f42a4635ede88cac73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 330585545}
   pickup:
     serializedVersion: 2
     m_Bits: 128
