@@ -6,6 +6,7 @@ public class RayCastPlayer : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private LayerMask pickup;
     [SerializeField] private Transform rightHand;
+    [SerializeField] private Transform throwPosition;
     private Transform _selection;
     private bool equipped;
 
@@ -72,7 +73,6 @@ public class RayCastPlayer : MonoBehaviour
         RaycastHit hit;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         bool hitting = Physics.Raycast(ray, out hit, Mathf.Infinity);
-        print(hit.point);
         Vector3 pos = _selection.position;
         if (hitting)
         {
@@ -80,12 +80,13 @@ public class RayCastPlayer : MonoBehaviour
         }
         else
         {
+            _selection.transform.position = throwPosition.position;
             dir = cam.ScreenPointToRay(Input.mousePosition).direction;
         }
 
         var rightChild = _selection.transform;
         var itemInHandRb = rightChild.GetComponent<Rigidbody>();
 
-        itemInHandRb.AddForce(dir * 800);
+        itemInHandRb.AddForce(dir * 500);
     }
 }

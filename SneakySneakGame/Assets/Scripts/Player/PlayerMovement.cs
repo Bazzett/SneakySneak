@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private GameObject lamp;
 	[SerializeField] private float minOil = 0f;
 	[SerializeField] private float maxOil = 10f;
-	private float currentOil = 10f;
+	private float currentOil;
 
 	private bool isLampOn = false;
 
@@ -64,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start()
 	{
+		currentOil = maxOil;
+	
 		currentSpeed = walkSpeed;
 		stamina = maxStamina;
 		lamp.gameObject.SetActive(false);
