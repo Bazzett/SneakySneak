@@ -497,6 +497,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   rightHand: {fileID: 6123415441086268038}
+  _pickupDistance: 2.4
 --- !u!114 &297552413
 MonoBehaviour:
   m_ObjectHideFlags: 0

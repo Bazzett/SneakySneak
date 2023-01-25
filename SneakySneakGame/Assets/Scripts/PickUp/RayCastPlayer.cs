@@ -9,7 +9,7 @@ public class RayCastPlayer : MonoBehaviour
     private Transform _selection;
     private bool equipped;
 
-    private float _pickupDistance = 2f;
+    [SerializeField] private float _pickupDistance = 2f;
 
     private void Update()
     {
@@ -20,8 +20,8 @@ public class RayCastPlayer : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            Drop();
             ThrowItem();
+            Drop();
         }
 
         HighlightTarget();
@@ -36,8 +36,6 @@ public class RayCastPlayer : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, _pickupDistance, pickup))
         {
-            
-            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 var selection = hit.transform;
@@ -65,6 +63,7 @@ public class RayCastPlayer : MonoBehaviour
         itemInHandRb.constraints = RigidbodyConstraints.None;
         itemInHandRb.useGravity = true;
         equipped = false;
+        _selection = null;
     }
 
     private void ThrowItem()
