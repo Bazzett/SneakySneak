@@ -9,7 +9,7 @@ public class RayCastPlayer : MonoBehaviour
     [SerializeField] private Transform throwPosition;
     private Transform _selection;
     private bool equipped;
-
+    
     [SerializeField] private float _pickupDistance = 2f;
 
     private void Update()
@@ -46,7 +46,8 @@ public class RayCastPlayer : MonoBehaviour
 
                 var itemInHandrb = selection.transform.GetComponent<Rigidbody>();
 
-                selection.GetComponent<BoxCollider>().enabled = false;
+                CheckCollider(selection,false);
+                
                 itemInHandrb.constraints = RigidbodyConstraints.FreezeAll;
                 itemInHandrb.useGravity = false;
                 equipped = true;
@@ -60,7 +61,7 @@ public class RayCastPlayer : MonoBehaviour
         var rightChild = _selection.transform;
         var itemInHandRb = rightChild.GetComponent<Rigidbody>();
 
-        rightChild.GetComponent<BoxCollider>().enabled = true;
+        CheckCollider(rightChild,true);
         itemInHandRb.constraints = RigidbodyConstraints.None;
         itemInHandRb.useGravity = true;
         equipped = false;
@@ -88,5 +89,17 @@ public class RayCastPlayer : MonoBehaviour
         var itemInHandRb = rightChild.GetComponent<Rigidbody>();
 
         itemInHandRb.AddForce(dir * 500);
+    }
+
+    private void CheckCollider(Transform select, bool state)
+    {
+        if (select.GetComponent<BoxCollider>())
+        {
+            select.GetComponent<BoxCollider>().enabled = state;
+        }
+        else if (select.GetComponent<SphereCollider>())
+        {
+            select.GetComponent<SphereCollider>().enabled = state;
+        }
     }
 }
