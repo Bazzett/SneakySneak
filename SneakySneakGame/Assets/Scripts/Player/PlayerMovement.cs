@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Awake()
 	{
+		Cursor.lockState = CursorLockMode.Locked;
 		_rb = GetComponent<Rigidbody>();
 		_noise = GetComponent<NoiseManager>();
 	}
@@ -73,7 +74,12 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update()
 	{
-
+		
+		var camRotation = Quaternion.Euler(0,mainCam.transform.localEulerAngles.y,0);
+		
+		playerBody.rotation = camRotation;
+		
+		
 		Move(_targetVector);
 		GroundCheck();
 		Run();

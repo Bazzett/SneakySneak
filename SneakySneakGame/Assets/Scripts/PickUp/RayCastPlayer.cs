@@ -18,7 +18,7 @@ public class RayCastPlayer : MonoBehaviour
             Drop();
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _selection != null)
         {
             ThrowItem();
             Drop();
@@ -68,10 +68,24 @@ public class RayCastPlayer : MonoBehaviour
 
     private void ThrowItem()
     {
+        Vector3 dir;
+        RaycastHit hit;
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        bool hitting = Physics.Raycast(ray, out hit, Mathf.Infinity);
+        print(hit.point);
+        Vector3 pos = _selection.position;
+        if (hitting)
+        {
+            dir = (hit.point - pos).normalized;
+        }
+        else
+        {
+            dir = cam.ScreenPointToRay(Input.mousePosition).direction;
+        }
+
         var rightChild = _selection.transform;
         var itemInHandRb = rightChild.GetComponent<Rigidbody>();
-        
-        Vector3 direction = cam.ScreenPointToRay(Input.mousePosition).direction;
-        itemInHandRb.AddForce(direction * 800);
+
+        itemInHandRb.AddForce(dir * 800);
     }
 }
