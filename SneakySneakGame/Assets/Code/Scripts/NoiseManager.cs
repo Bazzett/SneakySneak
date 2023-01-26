@@ -27,7 +27,7 @@ using UnityEngine;
             currentHitObjects.Clear();
             
             Vector3 p1 = playerBody.position;
-            RaycastHit[] hits = Physics.SphereCastAll(p1,noiseRadius,-transform.up, noiseRadius,detectionFilter);
+            RaycastHit[] hits = Physics.SphereCastAll(p1,noiseRadius,transform.up, noiseRadius,detectionFilter);
             foreach (RaycastHit hit in hits)
             {
                 currentHitObjects.Add(hit.transform.gameObject); //Add hit target to a list

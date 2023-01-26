@@ -217,6 +217,7 @@ public class PlayerMovement : MonoBehaviour
 		else if (_blocked == false)
 		{
 			playerBody.localScale = new Vector3(playerBody.localScale.x, _startYScale, playerBody.localScale.z);
+			currentSpeed = walkSpeed;
 			_crouching = false;
 		}
 	}
