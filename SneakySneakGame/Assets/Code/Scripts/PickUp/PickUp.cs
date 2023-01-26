@@ -21,7 +21,7 @@ public class PickUp : MonoBehaviour
 		float randRange = Random.Range(-range,range);
 		print(randRange);
 		
-		rb.AddTorque(new Vector3(randRange,randRange,randRange)*force);
+		rb.AddTorque(new Vector3(randRange,0f,randRange)*force);
 		print("Torque added");
 	}
 	

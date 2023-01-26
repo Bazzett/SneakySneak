@@ -739,7 +739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7cc1fe704720f42a4635ede88cac73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 620
+  throwForce: 400
   pickupDistance: 2.2
   cam: {fileID: 330585545}
   pickup:
@@ -1056,7 +1056,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7791845924994356783}
-  m_Material: {fileID: 13400000, guid: 09f39417ebe538a4eaffa7dd712818f4, type: 2}
+  m_Material: {fileID: 13400000, guid: 54f85fd042e4da540995e1bd4ba9bef9, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
