@@ -38,7 +38,6 @@ namespace Enemy
 
         void IterateWaypointIndex()
         {
-            print("Iterate");
             _waypointsIndex++;
             if (_waypointsIndex == waypoints.Length)
             {
@@ -54,7 +53,6 @@ namespace Enemy
                 var waypointScript = waypoints[_waypointsIndex].GetComponent<WaypointBehaviour>();
                 if (waypointScript.StopAndWait)
                 {
-                    Debug.Log("Start Coroutine");
                     StartCoroutine(WaitAndPath());
                 }
                 else if (!waypointScript.StopAndWait)
@@ -71,25 +69,25 @@ namespace Enemy
             //Stop enemy when found player and is close
             if (Vector3.Distance(transform.position, _FOV.target.position) < 2f)
             {
-                Debug.Log("Stopped");
+                //Debug.Log("Stopped");
                 stopped = true;
                 _agent.ResetPath();
             }
             else if (_FOV.canSeeTarget)
             {
-                Debug.Log("Chase player");
+                //Debug.Log("Chase player");
                 UpdateDestination();
             }
             else if (Vector3.Distance(transform.position, _target) < 1)
             {
                 _FOV.alerted = false;
-                Debug.Log("Go to next path");
+                //Debug.Log("Go to next path");
                 UpdateDestination();
             }
             else if (!_agent.hasPath)
             {
                 _FOV.alerted = false;
-                Debug.Log("No path, start new path");
+                //Debug.Log("No path, start new path");
                 UpdateDestination();
             }
         }

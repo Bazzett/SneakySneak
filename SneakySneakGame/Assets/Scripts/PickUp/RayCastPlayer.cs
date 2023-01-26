@@ -3,15 +3,21 @@ using UnityEngine;
 
 public class RayCastPlayer : MonoBehaviour
 {
+    [Header("Throw")]
+    [SerializeField] [Range(100, 1000)] private int throwForce = 500;
+    [SerializeField] [Range(1, 3)] private float pickupDistance = 2f;
+    
+    [Header("Camera")]
     [SerializeField] private Camera cam;
     [SerializeField] private LayerMask pickup;
+    
+    [Header("Transforms and posistions")]
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform throwPosition;
+    
     private Transform _selection;
     private bool equipped;
     
-    [SerializeField] private float _pickupDistance = 2f;
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && equipped)
@@ -35,7 +41,7 @@ public class RayCastPlayer : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
 
-        if (Physics.Raycast(ray, out hit, _pickupDistance, pickup))
+        if (Physics.Raycast(ray, out hit, pickupDistance, pickup))
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -59,11 +65,15 @@ public class RayCastPlayer : MonoBehaviour
     private void Drop()
     {
         var rightChild = _selection.transform;
-        var itemInHandRb = rightChild.GetComponent<Rigidbody>();
+        var rightChildRB = rightChild.GetComponent<Rigidbody>();
+        var rightChildPickUp = rightChild.GetComponent<PickUp>();
         
         CheckCollider(rightChild,true);
-        itemInHandRb.constraints = RigidbodyConstraints.None;
-        itemInHandRb.useGravity = true;
+        rightChildRB.constraints = RigidbodyConstraints.None;
+        rightChildRB.useGravity = true;
+        
+        rightChildPickUp.RandomTorque();
+        
         equipped = false;
         _selection = null;
     }
@@ -84,11 +94,10 @@ public class RayCastPlayer : MonoBehaviour
             _selection.transform.position = throwPosition.position;
             dir = cam.ScreenPointToRay(Input.mousePosition).direction;
         }
+        
+        var itemInHandRb = _selection.transform.GetComponent<Rigidbody>();
+        itemInHandRb.AddForce(dir * throwForce);
 
-        var rightChild = _selection.transform;
-        var itemInHandRb = rightChild.GetComponent<Rigidbody>();
-
-        itemInHandRb.AddForce(dir * 500);
     }
 
     private void CheckCollider(Transform select, bool state)
