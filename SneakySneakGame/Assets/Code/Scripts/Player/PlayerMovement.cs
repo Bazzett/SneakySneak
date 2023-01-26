@@ -8,16 +8,16 @@ using static Unity.Burst.Intrinsics.X86.Avx;
 public class PlayerMovement : MonoBehaviour
 {
 	[Header("Movement")]
+	[SerializeField] float currentSpeed;
+	[SerializeField] private bool playerControl = true;
 	[SerializeField] private float walkSpeed;
 	[SerializeField] private float sprintSpeed;
-	[SerializeField] float currentSpeed;
+	[SerializeField] private float crouchSpeed;
 	[SerializeField] private GameObject mainCam;
 	[SerializeField] private float sprintNoise;
 	private Vector2 _moveInput;
 	private Vector3 _targetVector;
-
 	[Header("Crouching")]
-	[SerializeField] private float crouchSpeed;
 	[SerializeField] private float crouchYScale;
 	[SerializeField] private Transform playerBody;
 	[SerializeField] private Transform aboveCheck;
@@ -26,8 +26,8 @@ public class PlayerMovement : MonoBehaviour
 	private bool _crouching;
 	
 	[Header("Stamina")]
-	[SerializeField] private float stamina;
-	[SerializeField] private float maxStamina;
+	[SerializeField] [Range(0,30)] private float stamina;
+	[SerializeField] [Range(0,30)] private float maxStamina;
 	[SerializeField] private float staminaDecreaseRate;
 	[SerializeField] private float staminaIncreaseRate;
 	[SerializeField] private bool isSprinting;
@@ -80,19 +80,21 @@ public class PlayerMovement : MonoBehaviour
 		var camRotation = Quaternion.Euler(0,mainCam.transform.localEulerAngles.y,0);
 		
 		playerBody.rotation = camRotation;
+
+		if (playerControl)
+		{
+			Move(_targetVector);
+			GroundCheck();
+			Run();
+			Crouch();
+		}
 		
-		
-		Move(_targetVector);
-		GroundCheck();
-		Run();
-		Crouch();
 		OilBurn();
 	}
 
 	private void FixedUpdate()
 	{
 		Gravity();
-
 	}
 
 	private void OnMove(InputValue value)
@@ -157,9 +159,10 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Gravity()
 	{
-		_rb.AddForce(transform.up * -gravity, ForceMode.Acceleration);
+		
 		if (!_grounded)
 		{
+			_rb.AddForce(transform.up * -gravity, ForceMode.Acceleration);
 			_noisePulse += _noisePulseRate;
 		}
 		else
@@ -206,7 +209,6 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Crouch()
 	{
-		
 		_blocked = Physics.Raycast(groundCheck.position, groundCheck.transform.up, 2, groundLayer);
 		if (Input.GetKey(KeyCode.LeftControl))
 		{
@@ -218,6 +220,8 @@ public class PlayerMovement : MonoBehaviour
 		{
 			playerBody.localScale = new Vector3(playerBody.localScale.x, _startYScale, playerBody.localScale.z);
 			_crouching = false;
+			
+			if (!isSprinting) currentSpeed = walkSpeed;
 		}
 	}
 }
