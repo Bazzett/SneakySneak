@@ -2,6 +2,7 @@ using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 namespace Enemy
 {
@@ -12,8 +13,8 @@ namespace Enemy
         private int _waypointsIndex;
         private Vector3 _target;
 
-        [SerializeField]
-        private EnemyFieldOfView _FOV;
+        [SerializeField] private EnemyFieldOfView _FOV;
+        [SerializeField] private float stopDistance = 2f;
 
         public bool stopped;
 
@@ -67,7 +68,7 @@ namespace Enemy
 
             stopped = false;
             //Stop enemy when found player and is close
-            if (Vector3.Distance(transform.position, _FOV.target.position) < 2f)
+            if (Vector3.Distance(transform.position, _FOV.target.position) < stopDistance)
             {
                 //Debug.Log("Stopped");
                 stopped = true;
@@ -90,6 +91,12 @@ namespace Enemy
                 //Debug.Log("No path, start new path");
                 UpdateDestination();
             }
+            
+            //Restart level
+            if (_FOV.canSeeTarget && Vector3.Distance(transform.position, _FOV.target.position) <= stopDistance)
+            {
+                RestartLevel();
+            }
         }
 
         public void SetPath(Vector3 posistion)
@@ -103,6 +110,11 @@ namespace Enemy
             var waypointScript = waypoints[_waypointsIndex].GetComponent<WaypointBehaviour>();
             yield return new WaitForSeconds(waypointScript.Seconds);
             IterateWaypointIndex();
+        }
+        
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

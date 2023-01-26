@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d58d660-dfd2-4519-a3c9-e63fd3a29868" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/NoiseManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/NoiseManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/Player/PlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/Player/PlayerMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Playtest.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Playtest.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="0d58d660-dfd2-4519-a3c9-e63fd3a29868" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +27,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity Hub\2021.3.11f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Side projects\SneakySneak\SneakySneakGame&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Side projects\SneakySneak\SneakySneakGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -87,10 +79,7 @@
       <workItem from="1674651850560" duration="5174000" />
       <workItem from="1674657839035" duration="1064000" />
       <workItem from="1674722337941" duration="1083000" />
-      <workItem from="1674733078808" duration="4358000" />
-      <workItem from="1674743253460" duration="5000" />
-      <workItem from="1674745951808" duration="414000" />
-      <workItem from="1674746390042" duration="554000" />
+      <workItem from="1674733078808" duration="9226000" />
     </task>
     <servers />
   </component>
