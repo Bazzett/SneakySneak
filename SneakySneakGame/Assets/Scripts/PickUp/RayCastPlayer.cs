@@ -60,7 +60,7 @@ public class RayCastPlayer : MonoBehaviour
     {
         var rightChild = _selection.transform;
         var itemInHandRb = rightChild.GetComponent<Rigidbody>();
-
+        
         CheckCollider(rightChild,true);
         itemInHandRb.constraints = RigidbodyConstraints.None;
         itemInHandRb.useGravity = true;

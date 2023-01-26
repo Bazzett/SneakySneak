@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0d58d660-dfd2-4519-a3c9-e63fd3a29868" name="Changes" comment="" />
+    <list default="true" id="0d58d660-dfd2-4519-a3c9-e63fd3a29868" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SneakySneakGame/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Elias.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PickUp/RayCastPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PickUp/RayCastPlayer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +37,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="C:\Program Files\Unity Hub\2021.3.11f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath &quot;D:\Side projects\SneakySneak\SneakySneakGame&quot; -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Side projects\SneakySneak\SneakySneakGame" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -81,6 +88,7 @@
       <workItem from="1674588942626" duration="384000" />
       <workItem from="1674651850560" duration="5174000" />
       <workItem from="1674657839035" duration="1064000" />
+      <workItem from="1674722337941" duration="1083000" />
     </task>
     <servers />
   </component>
