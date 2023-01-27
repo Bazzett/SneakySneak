@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 	[SerializeField] private float crouchYScale;
 	[SerializeField] private Transform playerBody;
 	[SerializeField] private Transform aboveCheck;
+	[SerializeField] private float crouchNoise;
 	private bool _blocked;
 	private float _startYScale;
 	private bool _crouching;
@@ -214,6 +215,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			playerBody.localScale = new Vector3(playerBody.localScale.x, crouchYScale, playerBody.localScale.z);
 			currentSpeed = crouchSpeed;
+			_noise.noiseRadius = crouchNoise;
 			_crouching = true;
 		}
 		else if (_blocked == false)

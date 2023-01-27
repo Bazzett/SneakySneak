@@ -758,12 +758,13 @@ MonoBehaviour:
   playerControl: 1
   walkSpeed: 20
   sprintSpeed: 30
-  crouchSpeed: 15
+  crouchSpeed: 10
   mainCam: {fileID: 330585543}
   sprintNoise: 5
   crouchYScale: 0.5
   playerBody: {fileID: 4557814852722495710}
   aboveCheck: {fileID: 8494156339125924519}
+  crouchNoise: 1
   stamina: 0
   maxStamina: 20
   staminaDecreaseRate: 6
