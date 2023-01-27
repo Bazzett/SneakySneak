@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7cc1fe704720f42a4635ede88cac73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  throwForce: 400
+  throwForce: 500
   pickupDistance: 2.2
   cam: {fileID: 330585545}
   pickup:
