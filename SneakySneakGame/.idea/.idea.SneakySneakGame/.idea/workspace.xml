@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Scripts/PickUp/BreakChance.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -81,7 +84,7 @@
       <workItem from="1674722337941" duration="1083000" />
       <workItem from="1674733078808" duration="9226000" />
       <workItem from="1674835317185" duration="1254000" />
-      <workItem from="1674989528087" duration="3526000" />
+      <workItem from="1674989528087" duration="6718000" />
     </task>
     <servers />
   </component>

@@ -28,6 +28,12 @@ public class PickUp : MonoBehaviour
 		{
 			_noise.noiseRadius = noisePulse;
 			thrown = false;
+			
+			//Check if item has the breakchance script. Then run function.
+			if (GetComponent<BreakChance>())
+			{
+				GetComponent<BreakChance>().Break();
+			}
 		}
 	}
 

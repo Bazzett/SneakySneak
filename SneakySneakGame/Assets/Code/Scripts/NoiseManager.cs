@@ -33,7 +33,10 @@ using UnityEngine;
                 currentHitObjects.Add(hit.transform.gameObject); //Add hit target to a list
                 var hitFOV = hit.transform.GetComponent<EnemyFieldOfView>(); //Get script from hit target
                 var hitPatrolling = hit.transform.GetComponent<EnemyPatrolling>(); //Get script from hit target
+                
                 hitFOV.alerted = true; //Set state to alerted
+                var coroutine = hitPatrolling.WaitAndPath();
+                hitPatrolling.StopCoroutine(coroutine);
                 if (!hitPatrolling.stopped) hitPatrolling.SetPath(transform.position); //Set path if not stopped
             }
         }
@@ -44,9 +47,9 @@ using UnityEngine;
             {
                 noiseRadius = Mathf.Lerp(noiseRadius, defaultNoiseRadius, 0.015f);
             }
-            else if (noiseRadius != 0)
+            else
             {
-                noiseRadius = 0f;
+                noiseRadius = -1f;
             }
         }
     }
