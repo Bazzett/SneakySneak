@@ -49,7 +49,7 @@ namespace Enemy
         void FindPath()
         {
             //Check if target is a waypoint and not sth else
-            if (_target != _FOV.target.position && Vector3.Distance(transform.position, _target) < 1 && !_coroutineRunning)
+            if (_target != _FOV.target.position && Vector3.Distance(transform.position, _target) < 1 && !_coroutineRunning && !_FOV.alerted)
             {
                 var waypointScript = waypoints[_waypointsIndex].GetComponent<WaypointBehaviour>();
                 if (waypointScript.StopAndWait)
@@ -70,25 +70,25 @@ namespace Enemy
             //Stop enemy when found player and is close
             if (Vector3.Distance(transform.position, _FOV.target.position) < stopDistance)
             {
-                //Debug.Log("Stopped");
+                Debug.Log("Stopped");
                 stopped = true;
                 _agent.ResetPath();
             }
             else if (_FOV.canSeeTarget)
             {
-                //Debug.Log("Chase player");
+                Debug.Log("Chase player");
                 UpdateDestination();
             }
             else if (Vector3.Distance(transform.position, _target) < 1)
             {
                 _FOV.alerted = false;
-                //Debug.Log("Go to next path");
+                Debug.Log("Go to next path");
                 UpdateDestination();
             }
             else if (!_agent.hasPath)
             {
                 _FOV.alerted = false;
-                //Debug.Log("No path, start new path");
+                Debug.Log("No path, start new path");
                 UpdateDestination();
             }
             
@@ -104,7 +104,7 @@ namespace Enemy
             _agent.SetDestination(posistion);
         }
 
-        private IEnumerator WaitAndPath()
+        public IEnumerator WaitAndPath()
         {
             _coroutineRunning = true;
             var waypointScript = waypoints[_waypointsIndex].GetComponent<WaypointBehaviour>();
