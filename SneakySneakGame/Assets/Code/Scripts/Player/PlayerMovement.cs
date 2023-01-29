@@ -210,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
 
 	private void Crouch()
 	{
-		_blocked = Physics.Raycast(groundCheck.position, groundCheck.transform.up, 2, groundLayer);
+		_blocked = Physics.Raycast(aboveCheck.position, aboveCheck.transform.up, 0.5f, groundLayer);
 		if (Input.GetKey(KeyCode.LeftControl))
 		{
 			playerBody.localScale = new Vector3(playerBody.localScale.x, crouchYScale, playerBody.localScale.z);
