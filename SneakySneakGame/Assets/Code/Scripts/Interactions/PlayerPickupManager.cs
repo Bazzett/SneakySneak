@@ -37,13 +37,14 @@ public class PlayerPickupManager : MonoBehaviour
 
     private void HighlightTarget()
     {
-        RaycastHit hit;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-
-        if (Physics.Raycast(ray, out hit, pickupDistance, pickup))
+       
+        
+        
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            RaycastHit hit;
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, pickupDistance, pickup))
             {
                 var selection = hit.transform;
                 //selection.transform.SetParent(rightHand);
