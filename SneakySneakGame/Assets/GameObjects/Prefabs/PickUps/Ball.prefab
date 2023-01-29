@@ -12,8 +12,10 @@ GameObject:
   - component: {fileID: 5525878671327144056}
   - component: {fileID: 5525878671327144057}
   - component: {fileID: 5525878671327144060}
+  - component: {fileID: -2290551626394097442}
   - component: {fileID: 5525878671327144062}
   - component: {fileID: 5525878671327144063}
+  - component: {fileID: 1656176460800401559}
   m_Layer: 7
   m_Name: Ball
   m_TagString: Untagged
@@ -99,6 +101,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1
+  thrown: 0
+  noisePulse: 7
+--- !u!114 &-2290551626394097442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525878671327144061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee3149e4f14d414a88c4a267344a810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHitObjects: []
+  defaultNoiseRadius: 0
+  noiseRadius: 0
+  detectionFilter:
+    serializedVersion: 2
+    m_Bits: 512
+  transformBody: {fileID: 5525878671327144059}
 --- !u!135 &5525878671327144062
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -120,7 +143,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5525878671327144061}
   serializedVersion: 2
-  m_Mass: 0.24
+  m_Mass: 0.3
   m_Drag: 0.5
   m_AngularDrag: 1
   m_UseGravity: 1
@@ -128,3 +151,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1656176460800401559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5525878671327144061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245bf9e8f7764b42af44e3beac6da83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

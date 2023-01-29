@@ -9,7 +9,7 @@ using UnityEngine;
         public float defaultNoiseRadius;
         public float noiseRadius;
         [SerializeField] private LayerMask detectionFilter;
-        [SerializeField] private Transform playerBody;
+        [SerializeField] private Transform transformBody;
         
         void Start()
         {
@@ -26,7 +26,7 @@ using UnityEngine;
         {
             currentHitObjects.Clear();
             
-            Vector3 p1 = playerBody.position;
+            Vector3 p1 = transformBody.position;
             RaycastHit[] hits = Physics.SphereCastAll(p1,noiseRadius,transform.up, noiseRadius,detectionFilter);
             foreach (RaycastHit hit in hits)
             {
@@ -40,6 +40,13 @@ using UnityEngine;
 
         private void RadiusController()
         {
-            noiseRadius = Mathf.Lerp(noiseRadius, defaultNoiseRadius, 0.015f);
+            if (noiseRadius > 0.01f)
+            {
+                noiseRadius = Mathf.Lerp(noiseRadius, defaultNoiseRadius, 0.015f);
+            }
+            else if (noiseRadius != 0)
+            {
+                noiseRadius = 0f;
+            }
         }
     }

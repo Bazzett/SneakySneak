@@ -819,7 +819,7 @@ MonoBehaviour:
   detectionFilter:
     serializedVersion: 2
     m_Bits: 512
-  playerBody: {fileID: 4557814852722495710}
+  transformBody: {fileID: 4557814852722495710}
 --- !u!54 &148001066324051120
 Rigidbody:
   m_ObjectHideFlags: 0

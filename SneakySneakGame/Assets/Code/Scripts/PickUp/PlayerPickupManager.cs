@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class RayCastPlayer : MonoBehaviour
+public class PlayerPickupManager : MonoBehaviour
 {
     [Header("Throw")]
     [SerializeField] [Range(100, 1000)] private int throwForce = 500;
@@ -11,7 +11,7 @@ public class RayCastPlayer : MonoBehaviour
     [SerializeField] private Camera cam;
     [SerializeField] private LayerMask pickup;
     
-    [Header("Transforms and posistions")]
+    [Header("Transforms and positions")]
     [SerializeField] private Transform rightHand;
     [SerializeField] private Transform throwPosition;
     
@@ -95,6 +95,7 @@ public class RayCastPlayer : MonoBehaviour
             dir = cam.ScreenPointToRay(Input.mousePosition).direction;
         }
         
+        _selection.transform.GetComponent<PickUp>().thrown = true;
         var itemInHandRb = _selection.transform.GetComponent<Rigidbody>();
         itemInHandRb.AddForce(dir * throwForce);
 

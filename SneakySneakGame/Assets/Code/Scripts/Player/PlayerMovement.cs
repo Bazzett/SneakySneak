@@ -206,7 +206,7 @@ public class PlayerMovement : MonoBehaviour
 		{
 			lamp.gameObject.SetActive(false);
 		}
-	}
+	} 
 
 	private void Crouch()
 	{

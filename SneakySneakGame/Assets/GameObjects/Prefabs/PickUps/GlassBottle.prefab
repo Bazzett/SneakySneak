@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2103934402873631213}
   - component: {fileID: 8141897526955782132}
   m_Layer: 0
-  m_Name: Cylinder (2)
+  m_Name: Luiquid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,8 +94,10 @@ GameObject:
   - component: {fileID: 4517025774270676943}
   - component: {fileID: 4517025774270676936}
   - component: {fileID: 5502538543078640481}
+  - component: {fileID: -8402715536796643573}
   - component: {fileID: 1924583041002784370}
   - component: {fileID: 121548924}
+  - component: {fileID: -6298894040055306543}
   m_Layer: 7
   m_Name: GlassBottle
   m_TagString: Untagged
@@ -142,6 +144,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 2
+  thrown: 0
+  noisePulse: 10
+--- !u!114 &-8402715536796643573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517025774270676939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ee3149e4f14d414a88c4a267344a810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHitObjects: []
+  defaultNoiseRadius: 0
+  noiseRadius: 0
+  detectionFilter:
+    serializedVersion: 2
+    m_Bits: 512
+  transformBody: {fileID: 2366140406228272200}
 --- !u!65 &1924583041002784370
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,6 +194,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &-6298894040055306543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517025774270676939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245bf9e8f7764b42af44e3beac6da83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7187923588599456784
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,7 +218,7 @@ GameObject:
   - component: {fileID: 3402380047822762226}
   - component: {fileID: 1263168860352695125}
   m_Layer: 0
-  m_Name: Cylinder (1)
+  m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -266,7 +301,7 @@ GameObject:
   - component: {fileID: 93257133292923708}
   - component: {fileID: 5707265463860500249}
   m_Layer: 0
-  m_Name: Cylinder
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
